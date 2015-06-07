@@ -19,7 +19,7 @@ else
     disp(['Best node is ' headers{nodeIndex} ' with an information gain of ' num2str(infGain)]);
     tree{k} = headers{nodeIndex};
     k = k + 1;
-    for i = 1:size(options{nodeIndex})
+    for i = 1:size(options{nodeIndex},2)
         [S_, R_] = GetRecordsForSubOption(data, nodeIndex, options{nodeIndex}{i}, results);
         if (size(usedOptions,1) == 0)
             usedOptions{1} = nodeIndex;

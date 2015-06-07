@@ -2,6 +2,8 @@ function [ specificRecords, specificResults ] = GetRecordsForSubOption( all_data
 %GETRECORDSFORSUBOPTION Summary of this function goes here
 %   Detailed explanation goes here
 
+specificRecords = cell.empty;
+specificResults = cell.empty;
 count = 1;
 for record=1:size(all_results);
     if (strcmp(all_data{record}{headerNum}, suboption))
