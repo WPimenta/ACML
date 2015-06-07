@@ -3,8 +3,8 @@ function [ infGain ] = InfGain( inputSet, outputSet, options, optionNum, HS )
 %   inputSet - 
 infGain = HS;
 for k=1:size(options{optionNum},2)
-    numPositive = 0;
-    numNegative = 0;
+    [specificRecords, specificResults] = GetRecordsForSubOption(inputSet, headerNum, suboption, outputSet)
+    [numPositive, numNegative] = countNegPos(specificRecords, specificResults);
     for j=1:size(outputSet)
         if (strcmp(options{optionNum}{k}, inputSet{j}{optionNum}))
             if (strcmp(outputSet{j}, 'Yes'))

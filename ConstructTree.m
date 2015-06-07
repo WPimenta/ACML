@@ -2,8 +2,7 @@ function [ ] = ConstructTree( S, k )
 %CONSTRUCTTREE Summary of this function goes here
 %   Detailed explanation goes here
 
-    numNeg = CountNeg(S);
-    numPos = CountPos(S);
+    [numNeg, numPos] = CountNeg(S);
     h = H(numNeg, numPos);
     if(numNeg == 0 || numPos == 0)
         if(numNeg > 0)
