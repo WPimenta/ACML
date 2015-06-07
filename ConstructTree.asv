@@ -18,9 +18,9 @@ function [ ] = ConstructTree( data, results, headers, options, k )
         tree{k} = headers{nodeIndex};
         k = k + 1;
         for i = 1:size(options{nodeIndex})
-            [S_, R_] = GetRecordsForSubOption(data, nodeIndex, options{nodeIndex}{i}, results);
-            %S_ = newS(data, headers{nodeIndex}, options{nodeIndex}{i});
-            ConstructTree(S_, R_, headers, options, k);
+            S_ = GetReco
+            S_ = newS(data, headers{nodeIndex}, options{nodeIndex}{i});
+            ConstructTree(S_, k);
         end
     end
 end
