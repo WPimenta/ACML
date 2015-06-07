@@ -6,9 +6,11 @@ function [ ] = ConstructTree( data, results, headers, options, usedOptions, k, t
     h = H(numNeg, numPos, size(results,1));
     if(numNeg == 0 || numPos == 0)
         if(numNeg > 0)
+            disp('Adding No as leaf');
             tree{k} = 'no';
             k = k + 1;
         elseif(numPos > 0)
+            disp('Adding Yes as leaf');
             tree{k} = 'yes';
             k = k + 1;
         end
