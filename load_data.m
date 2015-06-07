@@ -1,7 +1,7 @@
 clc;
 clear all;
 close all;
-numHeaders = input('Please enter the number of headers in the dataset: ');
+numHeaders = input(sprintf(['Please enter the number of headers in the dataset:\n']));
 headers = {};
 for i = 1:numHeaders
     disp('Enter header name: ');
