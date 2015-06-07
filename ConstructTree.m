@@ -24,7 +24,7 @@ function [ ] = ConstructTree( data, results, headers, options, usedOptions, k )
             else
                 usedOptions{size(usedOptions,1)+1} = nodeIndex;
             end
-            %S_ = newS(data, headers{nodeIndex}, options{nodeIndex}{i});
+            disp(['Considering branch for ' options{nodeIndex}{i}]);
             ConstructTree(S_, R_, headers, options, usedOptions, k);
         end
     end
