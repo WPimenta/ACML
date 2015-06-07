@@ -18,16 +18,8 @@ PNegative = numNegative / numRecords;
 HS = Mult(-PPositive,log2(PPositive)) -Mult(PNegative,log2(PNegative));
 
 disp('Information Gains');
-maxInformationGain = 0;
-maxInfGainOption = 0;
-for optionNum=1:size(options)
-    infGain = InfGain(all_data, all_results, options, optionNum, HS);
-    disp([headers{optionNum} ' = ' num2str(infGain)]);
-    if (infGain > maxInformationGain)
-        maxInformationGain = infGain;
-        maxInfGainOption = optionNum;
-    end
-end
+[bestInfGainNode, bestInfGain] = MaxInfGainNode(all_data, all_results, options, HS);
+disp(['Best node is ' headers{bestInfGainNode} ' with an information gain of ' num2str(bestInfGain)]);
 disp('=====================================');
 
 count = 1;
