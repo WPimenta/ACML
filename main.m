@@ -24,7 +24,7 @@ disp('=====================================');
 
 count = 1;
 for optionNum=1:size(options)
-    if (optionNum ~= maxInfGainOption)
+    if (optionNum ~= bestInfGainNode)
         remainingOptions{count} = optionNum;
         count = count + 1;
     end
