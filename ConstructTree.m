@@ -4,6 +4,7 @@ function [ ] = ConstructTree( S, k )
 
     numNeg = CountNeg(S);
     numPos = CountPos(S);
+    h = H(numNeg, numPos);
     if(numNeg == 0 || numPos == 0)
         if(numNeg > 0)
             tree{k} = 'no';
@@ -13,7 +14,7 @@ function [ ] = ConstructTree( S, k )
             k = k + 1;
         end
     else
-        nodeIndex = MaxInfGainNode(S);
+        nodeIndex = MaxInfGainNode(S, h);
         tree{k} = S{nodeIndex};
         k = k + 1;
         for i = 1:sizeof(S{nodeIndex})
