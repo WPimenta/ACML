@@ -10,6 +10,9 @@ for record=1:size(all_results);
         count = count + 1;
     end
 end
+if (count == 1)
+   disp('Here'); 
+end
 specificRecords = specificRecords';
 specificResults = specificResults';
 end
