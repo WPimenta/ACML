@@ -1,20 +1,24 @@
-function [ node ] = ConstructTree( S )
+function [ ] = ConstructTree( S, k )
 %CONSTRUCTTREE Summary of this function goes here
 %   Detailed explanation goes here
 
-    [numNeg, numPos] = countNegPos();
+    numNeg = CountNeg(S);
+    numPos = CountPos(S);
     if(numNeg == 0 || numPos == 0)
         if(numNeg > 0)
-            node = 'no';
+            tree{k} = 'no';
+            k = k + 1;
         elseif(numPos > 0)
-            node = 'yes';
+            tree{k} = 'yes';
+            k = k + 1;
         end
     else
         nodeIndex = MaxInfGainNode(S);
-        node = S{nodeIndex};
+        tree{k} = S{nodeIndex};
+        k = k + 1;
         for i = 1:sizeof(S{nodeIndex})
             S_ = newS(S);
-            ConstructTree(S_);
+            ConstructTree(S_, k);
         end
     end
 end
