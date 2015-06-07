@@ -13,6 +13,9 @@ for i = 1:numHeaders
     end;
 end;
 
+headers = headers';
+options = options';
+
 k = input('How many entries in data set? ');
 for index = 1:k
     disp('Enter each value on a new line -------->')
@@ -21,6 +24,9 @@ for index = 1:k
     end;
     all_results{index} = input('End result? ','s');
 end;
+
+all_data = all_data';
+all_results = all_results';
 
 disp('Done loading data');
 disp('=====================================');
