@@ -2,8 +2,7 @@ function [ node ] = ConstructTree( S )
 %CONSTRUCTTREE Summary of this function goes here
 %   Detailed explanation goes here
 
-    numNeg = countNeg;
-    numPos = CountPos;
+    [numNeg, numPos] = countNegPos();
     if(numNeg == 0 || numPos == 0)
         if(numNeg > 0)
             node = 'no';
