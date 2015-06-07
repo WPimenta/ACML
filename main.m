@@ -1,6 +1,7 @@
 load_data;
 k = 1;
-ConstructTree(all_data, all_results, headers, options, k);
+usedOptions = cell.empty;
+ConstructTree(all_data, all_results, headers, options, usedOptions, k);
 % numRecords = size(all_data,1);
 % 
 % numPositive = 0;

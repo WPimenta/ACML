@@ -11,7 +11,7 @@ for record=1:size(all_results);
     end
 end
 if (count == 1)
-   disp('Here'); 
+    disp('hello');
 end
 specificRecords = specificRecords';
 specificResults = specificResults';
