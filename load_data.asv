@@ -64,7 +64,7 @@ all_data{k} = {'Rainy', 'Large', 'Big'};
 all_results{k} = 'Yes'; k = k + 1;
 all_data{k} = {'Rainy', 'Small', 'Big'};
 all_results{k} = 'No'; k = k + 1;
-all_data{k} = {'Rainy', 'Medium', 'Big'};
+all_data{k} = {'Sunny', 'Large', 'Normal'};
 all_results{k} = 'No'; k = k + 1;
 all_data = all_data';
 all_results = all_results';
