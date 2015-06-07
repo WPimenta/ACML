@@ -3,8 +3,8 @@ function [ informationGain ] = InfGain( inputSet, outputSet, options, optionNum,
 %   inputSet - 
 informationGain = HS;
 for k=1:size(options{optionNum},2)
-    [specificRecords, specificResults] = GetRecordsForSubOption(inputSet, optionNum, options{optionNum}{k}, outputSet)
-    [numPositive, numNegative] = countNegPos(specificResults);
+    [specificRecords, specificResults] = GetRecordsForSubOption(inputSet, optionNum, options{optionNum}{k}, outputSet);
+    [numPositive, numNegative] = CountNegPos(specificResults);
     PPositive = numPositive / (numPositive + numNegative);
     PNegative = numNegative / (numPositive + numNegative);
     PTotal = (numPositive + numNegative)/size(outputSet,1);

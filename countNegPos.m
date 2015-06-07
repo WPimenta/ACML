@@ -1,4 +1,4 @@
-function [ numNeg, numPos ] = countNegPos( results )
+function [ numNeg, numPos ] = CountNegPos( results )
 %COUNTNEG Summary of this function goes here
 %   Detailed explanation goes here
 numPos = 0;
