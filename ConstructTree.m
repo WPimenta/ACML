@@ -1,4 +1,4 @@
-function [ ] = ConstructTree( data, results, headers, options, usedOptions, k )
+function [ ] = ConstructTree( data, results, headers, options, usedOptions, k, tree )
 %CONSTRUCTTREE Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -25,8 +25,9 @@ function [ ] = ConstructTree( data, results, headers, options, usedOptions, k )
                 usedOptions{size(usedOptions,1)+1} = nodeIndex;
             end
             %S_ = newS(data, headers{nodeIndex}, options{nodeIndex}{i});
-            ConstructTree(S_, R_, headers, options, usedOptions, k);
+            ConstructTree(S_, R_, headers, options, usedOptions, k, tree);
         end
     end
+    
 end
 
