@@ -4,6 +4,9 @@ function [ ] = ConstructTree( data, results, headers, options, usedOptions, k, t
 
 [numNeg, numPos] = CountNegPos(results);
 h = H(numNeg, numPos, size(results,1));
+if (size(usedOptions,1)==0)
+    disp(['The overall entropy is ' num2str(h)]);
+end
 if(numNeg == 0 || numPos == 0)
     if(numNeg > 0)
         disp('Adding No as leaf');
